@@ -1,7 +1,7 @@
 package it.unibo.oop.lab05.ex5;
 
 import java.util.Collection;
-
+import java.lang.Math;
 /**
  *
  */
@@ -21,6 +21,7 @@ public final class Utilities {
      *            Collection type
      */
     public static <X> void copyAll(final Collection<X> source, final Collection<? super X> target) {
+    	target.addAll(source);
     }
 
     /**
@@ -31,8 +32,16 @@ public final class Utilities {
      * @return a random element from the collection
      * 
      */
+    
     public static <X> X getRandomElement(final Collection<X> coll) {
-        return null;
+    	int rndNumber = (int) Math.floor(Math.random() * coll.size());
+    	for (final X element : coll) {
+    		if (rndNumber == 0) {
+    			return element;
+    		}
+    		rndNumber--;
+    	}
+    	return null;
     }
 
     /**
@@ -47,6 +56,6 @@ public final class Utilities {
      * @return a pair with two random elements
      */
     public static <X, Y> Pair<X, Y> getRandomPair(final Collection<X> one, final Collection<Y> two) {
-        return null;
+        return new Pair<>(getRandomElement(one), getRandomElement(two));
     }
 }

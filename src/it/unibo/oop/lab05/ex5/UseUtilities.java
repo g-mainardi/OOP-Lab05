@@ -30,7 +30,7 @@ public final class UseUtilities {
         System.out.println(c);
         System.out.println(c2);
         for (int i = 0; i < 10; i++) {
-            System.out.println("Random-extracting: " + Utilities.getRandomElement(c));
+            System.out.println("Random-extracting from a,b,c,d :"  + Utilities.getRandomElement(c));
         }
         for (int i = 0; i < 10; i++) {
             System.out.println("Random-extracting pair: " + Utilities.getRandomPair(c, c2));
